@@ -191,7 +191,7 @@ class TabbedOrderWindow extends JFrame {
         
         
         // Pork Sisig
-        JLabel porkSisigLabel = new JLabel("Pork Sisig", JLabel.CENTER);
+        JLabel porkSisigLabel = new JLabel("Pork Sisig w/ Rice: 130", JLabel.CENTER);
         porkSisigLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon porkSisigIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/pork sisigg.png", 250, 250);
         JLabel porkSisigImageLabel = new JLabel(porkSisigIcon, JLabel.CENTER);
@@ -199,7 +199,7 @@ class TabbedOrderWindow extends JFrame {
         foodPanel.add(createItemPanelWithImage(porkSisigImageLabel, porkSisigLabel, porkSisigSpinner));
 
         // Chicken BBQ
-        JLabel chickenBBQLabel = new JLabel("Chicken BBQ", JLabel.CENTER);
+        JLabel chickenBBQLabel = new JLabel("Chicken BBQ w/ Rice: 100", JLabel.CENTER);
         chickenBBQLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon chickenBBQIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/chicken bbq.png", 250, 250);
         JLabel chickenBBQImageLabel = new JLabel(chickenBBQIcon, JLabel.CENTER);
@@ -207,7 +207,7 @@ class TabbedOrderWindow extends JFrame {
         foodPanel.add(createItemPanelWithImage(chickenBBQImageLabel, chickenBBQLabel, chickenBBQSpinner));
 
         // Pork BBQ
-        JLabel porkBBQLabel = new JLabel("Pork BBQ", JLabel.CENTER);
+        JLabel porkBBQLabel = new JLabel("Pork BBQ w/ Rice: 120", JLabel.CENTER);
         porkBBQLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon porkBBQIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/pork bbq.png", 250, 250);
         JLabel porkBBQImageLabel = new JLabel(porkBBQIcon, JLabel.CENTER);
@@ -215,7 +215,7 @@ class TabbedOrderWindow extends JFrame {
         foodPanel.add(createItemPanelWithImage(porkBBQImageLabel, porkBBQLabel, porkBBQSpinner));
 
         // Pork Sinigang
-        JLabel porkSinigangLabel = new JLabel("Pork Sinigang", JLabel.CENTER);
+        JLabel porkSinigangLabel = new JLabel("Pork Sinigang w/ Rice: 125", JLabel.CENTER);
         porkSinigangLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon porkSinigangIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/pork sinigang.png", 250, 250);
         JLabel porkSinigangImageLabel = new JLabel(porkSinigangIcon, JLabel.CENTER);
@@ -223,7 +223,7 @@ class TabbedOrderWindow extends JFrame {
         foodPanel.add(createItemPanelWithImage(porkSinigangImageLabel, porkSinigangLabel, porkSinigangSpinner));
 
         // Crispy Kare-Kare
-        JLabel crispyKareKareLabel = new JLabel("Crispy Kare-Kare", JLabel.CENTER);
+        JLabel crispyKareKareLabel = new JLabel("Crispy Kare-Kare w/ Rice: 140", JLabel.CENTER);
         crispyKareKareLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon crispyKareKareIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/crispy kare-kare.png", 250, 250);
         JLabel crispyKareKareImageLabel = new JLabel(crispyKareKareIcon, JLabel.CENTER);
@@ -231,7 +231,7 @@ class TabbedOrderWindow extends JFrame {
         foodPanel.add(createItemPanelWithImage(crispyKareKareImageLabel, crispyKareKareLabel, crispyKareKareSpinner));
 
         // Bangus Sisig
-        JLabel bangusSisigLabel = new JLabel("Bangus Sisig", JLabel.CENTER);
+        JLabel bangusSisigLabel = new JLabel("Bangus Sisig w/ Rice: 95", JLabel.CENTER);
         bangusSisigLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon bangusSisigIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/BANGUS SISIG.png", 250, 250);
         JLabel bangusSisigImageLabel = new JLabel(bangusSisigIcon, JLabel.CENTER);
@@ -247,7 +247,7 @@ class TabbedOrderWindow extends JFrame {
         drinksPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         // Iced Tea
-        JLabel icedTeaLabel = new JLabel("Iced Tea", JLabel.CENTER);
+        JLabel icedTeaLabel = new JLabel("Iced Tea: 45", JLabel.CENTER);
         icedTeaLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon icedTeaIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/iced tea.png", 250, 250);
         JLabel icedTeaImageLabel = new JLabel(icedTeaIcon, JLabel.CENTER);
@@ -255,7 +255,7 @@ class TabbedOrderWindow extends JFrame {
         drinksPanel.add(createItemPanelWithImage(icedTeaImageLabel, icedTeaLabel, icedTeaSpinner));
 
         // Pineapple Juice
-        JLabel pineappleJuiceLabel = new JLabel("Pineapple Juice", JLabel.CENTER);
+        JLabel pineappleJuiceLabel = new JLabel("Pineapple Juice: 40", JLabel.CENTER);
         pineappleJuiceLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon pineappleJuiceIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/pineapple juice.png", 250, 250);
         JLabel pineappleJuiceImageLabel = new JLabel(pineappleJuiceIcon, JLabel.CENTER);
@@ -263,7 +263,7 @@ class TabbedOrderWindow extends JFrame {
         drinksPanel.add(createItemPanelWithImage(pineappleJuiceImageLabel, pineappleJuiceLabel, pineappleJuiceSpinner));
 
         // Mango Juice
-        JLabel mangoJuiceLabel = new JLabel("Mango Juice", JLabel.CENTER);
+        JLabel mangoJuiceLabel = new JLabel("Mango Juice: 40", JLabel.CENTER);
         mangoJuiceLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon mangoJuiceIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/mango juice.png", 250, 250);
         JLabel mangoJuiceImageLabel = new JLabel(mangoJuiceIcon, JLabel.CENTER);
@@ -271,7 +271,7 @@ class TabbedOrderWindow extends JFrame {
         drinksPanel.add(createItemPanelWithImage(mangoJuiceImageLabel, mangoJuiceLabel, mangoJuiceSpinner));
 
         // Water
-        JLabel waterLabel = new JLabel("Water", JLabel.CENTER);
+        JLabel waterLabel = new JLabel("Water: 20", JLabel.CENTER);
         waterLabel.setFont(new Font("Arial", Font.BOLD, 14));
         ImageIcon waterIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/water.png", 250, 250);
         JLabel waterImageLabel = new JLabel(waterIcon, JLabel.CENTER);
@@ -287,7 +287,7 @@ class TabbedOrderWindow extends JFrame {
 	    dessertsPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Add padding around the panel
 	    
 	    // Halo-Halo
-	    JLabel haloHaloLabel = new JLabel("Halo-Halo", JLabel.CENTER);
+	    JLabel haloHaloLabel = new JLabel("Halo-Halo: 70", JLabel.CENTER);
 	    haloHaloLabel.setFont(new Font("Arial", Font.BOLD, 14));
 	    ImageIcon haloHaloIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/halo halo.png", 250, 250);
 	    JLabel haloHaloImageLabel = new JLabel(haloHaloIcon, JLabel.CENTER);
@@ -295,7 +295,7 @@ class TabbedOrderWindow extends JFrame {
 	    dessertsPanel.add(createItemPanelWithImage(haloHaloImageLabel, haloHaloLabel, haloHaloSpinner));
 
 	    // Leche Flan
-	    JLabel lecheFlanLabel = new JLabel("Leche Flan", JLabel.CENTER);
+	    JLabel lecheFlanLabel = new JLabel("Leche Flan: 60", JLabel.CENTER);
 	    lecheFlanLabel.setFont(new Font("Arial", Font.BOLD, 14));
 	    ImageIcon lecheFlanIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/leche flan.png", 250, 250);
 	    JLabel lecheFlanImageLabel = new JLabel(lecheFlanIcon, JLabel.CENTER);
@@ -303,7 +303,7 @@ class TabbedOrderWindow extends JFrame {
 	    dessertsPanel.add(createItemPanelWithImage(lecheFlanImageLabel, lecheFlanLabel, lecheFlanSpinner));
 
 	    // Cheesecake
-	    JLabel cheesecakeLabel = new JLabel("Cheesecake", JLabel.CENTER);
+	    JLabel cheesecakeLabel = new JLabel("Cheesecake: 80", JLabel.CENTER);
 	    cheesecakeLabel.setFont(new Font("Arial", Font.BOLD, 14));
 	    ImageIcon cheesecakeIcon = createImageIcon("C:/Users/arvin/Desktop/SATISFEED/cheesecake.png", 250, 250);
 	    JLabel cheesecakeImageLabel = new JLabel(cheesecakeIcon, JLabel.CENTER);
@@ -316,7 +316,7 @@ class TabbedOrderWindow extends JFrame {
 	    dessertsPanel.add(cheesecakePanel);
 
 	    // New text label for the cheesecake description
-	    JLabel cheesecakeDescriptionLabel = new JLabel("<html><div style='font-family: EVOGRIA; font-size: 40px; text-align: center;'>Savoring Satisfaction, One Bite at a Time</div></html>");
+	    JLabel cheesecakeDescriptionLabel = new JLabel("<html><div style='font-family: EVOGRIA; font-size: 30px; text-align: center;'>Savoring Satisfaction, One Bite at a Time</div></html>");
 	    cheesecakeDescriptionLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 	    dessertsPanel.add(cheesecakeDescriptionLabel);
 
@@ -545,15 +545,15 @@ class OrderSummaryWindow extends JFrame {
         totalPrice += chickenBBQQuantity * 100;
         totalPrice += porkBBQQuantity * 120;
         totalPrice += porkSinigangQuantity * 125;
-        totalPrice += crispyKareKareQuantity * 110;
+        totalPrice += crispyKareKareQuantity * 140;
         totalPrice += bangusSisigQuantity * 95;
         totalPrice += icedTeaQuantity * 45;
         totalPrice += pineappleJuiceQuantity * 40;
         totalPrice += mangoJuiceQuantity * 40;
         totalPrice += waterQuantity * 20;
-        totalPrice += haloHaloQuantity * 60;
-        totalPrice += lecheFlanQuantity * 50;
-        totalPrice += cheesecakeQuantity * 70;
+        totalPrice += haloHaloQuantity * 70;
+        totalPrice += lecheFlanQuantity * 60;
+        totalPrice += cheesecakeQuantity * 80;
 
         return totalPrice;
     }
@@ -615,7 +615,7 @@ class OrderSummaryWindow extends JFrame {
             writer.write("Cash Input - " + cash + " pesos\n");
             writer.write("Change - " + change + " pesos\n\n");
             writer.write("\n---------------------------------------------");
-            
+             
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }

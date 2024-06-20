@@ -414,6 +414,7 @@ class OrderSummaryWindow extends JFrame {
 
         // Create button panel with Checkout and Back buttons
         JButton checkoutButton = new JButton("Checkout");
+        checkoutButton.setFont(new Font("Arial", Font.BOLD, 16));
         checkoutButton.setBackground(Color.ORANGE);
         checkoutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -451,17 +452,32 @@ class OrderSummaryWindow extends JFrame {
         });
 
         JButton backButton = new JButton("Back");
-        backButton.setBackground(Color.ORANGE);
+        backButton.setBackground(Color.WHITE);
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	orderCount -= 1;
                 dispose(); // Close the current window
             }
         });
+        JPanel buttonPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10); // Padding between components
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(checkoutButton);
-        buttonPanel.add(backButton);
+        // Add checkout button
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        checkoutButton.setPreferredSize(new Dimension(150, 40)); // Increase size of checkout button
+        buttonPanel.add(checkoutButton, gbc);
+
+        // Add back button
+        gbc.gridx = 0;
+        gbc.gridy = -1;
+        gbc.anchor = GridBagConstraints.CENTER;
+        backButton.setPreferredSize(new Dimension(80, 25)); // Decrease button size
+        buttonPanel.add(backButton, gbc);
+        
+
 
         // Main panel to hold everything
         JPanel panel = new JPanel();
@@ -490,43 +506,43 @@ class OrderSummaryWindow extends JFrame {
         sb.append("<ul>");
 
         if (porkSisigQuantity > 0) {
-            sb.append("<li>Pork Sisig (" + porkSisigQuantity + ")</li>");
+            sb.append("<li>Pork Sisig (P130): " + porkSisigQuantity + "</li>");
         }
         if (chickenBBQQuantity > 0) {
-            sb.append("<li>Chicken BBQ (" + chickenBBQQuantity + ")</li>");
+            sb.append("<li>Chicken BBQ (100): " + chickenBBQQuantity + "</li>");
         }
         if (porkBBQQuantity > 0) {
-            sb.append("<li>Pork BBQ (" + porkBBQQuantity + ")</li>");
+            sb.append("<li>Pork BBQ (P120):" + porkBBQQuantity + "</li>");
         }
         if (porkSinigangQuantity > 0) {
-            sb.append("<li>Pork Sinigang (" + porkSinigangQuantity + ")</li>");
+            sb.append("<li>Pork Sinigang (P125)" + porkSinigangQuantity + "</li>");
         }
         if (crispyKareKareQuantity > 0) {
-            sb.append("<li>Crispy Kare-Kare (" + crispyKareKareQuantity + ")</li>");
+            sb.append("<li>Crispy Kare-Kare (P140)" + crispyKareKareQuantity + "</li>");
         }
         if (bangusSisigQuantity > 0) {
-            sb.append("<li>Bangus Sisig (" + bangusSisigQuantity + ")</li>");
+            sb.append("<li>Bangus Sisig (P95)" + bangusSisigQuantity + "</li>");
         }
         if (icedTeaQuantity > 0) {
-            sb.append("<li>Iced Tea (" + icedTeaQuantity + ")</li>");
+            sb.append("<li>Iced Tea (P45)" + icedTeaQuantity + "</li>");
         }
         if (pineappleJuiceQuantity > 0) {
-            sb.append("<li>Pineapple Juice (" + pineappleJuiceQuantity + ")</li>");
+            sb.append("<li>Pineapple Juice (P40)" + pineappleJuiceQuantity + "</li>");
         }
         if (mangoJuiceQuantity > 0) {
-            sb.append("<li>Mango Juice (" + mangoJuiceQuantity + ")</li>");
+            sb.append("<li>Mango Juice (P40)" + mangoJuiceQuantity + "</li>");
         }
         if (waterQuantity > 0) {
-            sb.append("<li>Water (" + waterQuantity + ")</li>");
+            sb.append("<li>Water (P20)" + waterQuantity + "</li>");
         }
         if (haloHaloQuantity > 0) {
-            sb.append("<li>Halo-Halo (" + haloHaloQuantity + ")</li>");
+            sb.append("<li>Halo-Halo (P70)" + haloHaloQuantity + "</li>");
         }
         if (lecheFlanQuantity > 0) {
-            sb.append("<li>Leche Flan (" + lecheFlanQuantity + ")</li>");
+            sb.append("<li>Leche Flan (P60)" + lecheFlanQuantity + "</li>");
         }
         if (cheesecakeQuantity > 0) {
-            sb.append("<li>Cheesecake (" + cheesecakeQuantity + ")</li>");
+            sb.append("<li>Cheesecake (P80)" + cheesecakeQuantity + "</li>");
         }
 
         sb.append("</ul>");
@@ -588,43 +604,43 @@ class OrderSummaryWindow extends JFrame {
             writer.write("Items Ordered:\n");
 
             if (porkSisigQuantity > 0) {
-                writer.write("Pork Sisig: " + porkSisigQuantity + "\n");
+                writer.write("Pork Sisig w/ Rice (130) " + porkSisigQuantity + "\n");
             }
             if (chickenBBQQuantity > 0) {
-                writer.write("Chicken BBQ: " + chickenBBQQuantity + "\n");
+                writer.write("Chicken BBQ w/ Rice (100): " + chickenBBQQuantity + "\n");
             }
             if (porkBBQQuantity > 0) {
-                writer.write("Pork BBQ: " + porkBBQQuantity + "\n");
+                writer.write("Pork BBQ w/ Rice (120): " + porkBBQQuantity + "\n");
             }
             if (porkSinigangQuantity > 0) {
-                writer.write("Pork Sinigang: " + porkSinigangQuantity + "\n");
+                writer.write("Pork Sinigang w/ Rice (125): " + porkSinigangQuantity + "\n");
             }
             if (crispyKareKareQuantity > 0) {
-                writer.write("Crispy Kare-Kare: " + crispyKareKareQuantity + "\n");
+                writer.write("Crispy Kare-Kare w/ Rice (140): " + crispyKareKareQuantity + "\n");
             }
             if (bangusSisigQuantity > 0) {
-                writer.write("Bangus Sisig: " + bangusSisigQuantity + "\n");
+                writer.write("Bangus Sisig w/ Rice (95): " + bangusSisigQuantity + "\n");
             }
             if (icedTeaQuantity > 0) {
-                writer.write("Iced Tea: " + icedTeaQuantity + "\n");
+                writer.write("Iced Tea (45): " + icedTeaQuantity + "\n");
             }
             if (pineappleJuiceQuantity > 0) {
-                writer.write("Pineapple Juice: " + pineappleJuiceQuantity + "\n");
+                writer.write("Pineapple Juice (40): " + pineappleJuiceQuantity + "\n");
             }
             if (mangoJuiceQuantity > 0) {
-                writer.write("Mango Juice: " + mangoJuiceQuantity + "\n");
+                writer.write("Mango Juice (40): " + mangoJuiceQuantity + "\n");
             }
             if (waterQuantity > 0) {
-                writer.write("Water: " + waterQuantity + "\n");
+                writer.write("Water (20): " + waterQuantity + "\n");
             }
             if (haloHaloQuantity > 0) {
-                writer.write("Halo-Halo: " + haloHaloQuantity + "\n");
+                writer.write("Halo-Halo (70: " + haloHaloQuantity + "\n");
             }
             if (lecheFlanQuantity > 0) {
-                writer.write("Leche Flan: " + lecheFlanQuantity + "\n");
+                writer.write("Leche Flan (60): " + lecheFlanQuantity + "\n");
             }
             if (cheesecakeQuantity > 0) {
-                writer.write("Cheesecake: " + cheesecakeQuantity + "\n");
+                writer.write("Cheesecake (80): " + cheesecakeQuantity + "\n");
             }
 
             writer.write("Total Price - " + totalPrice + " pesos\n");

@@ -13,8 +13,25 @@ public class resto {
             public void run() {
                 TitleWindow titleWindow = new TitleWindow();
                 titleWindow.setVisible(true);
+                closePreviousWindow();
             }
         });
+    }
+    private static void closePreviousWindow() {
+        TabbedOrderWindow prevWindow = getPreviousWindow();
+        if (prevWindow != null) {
+            prevWindow.dispose();
+        }
+    }
+
+    private static TabbedOrderWindow getPreviousWindow() {
+        // Find the previously opened TabbedOrderWindow
+        for (Window window : Window.getWindows()) {
+            if (window instanceof TabbedOrderWindow) {
+                return (TabbedOrderWindow) window;
+            }
+        }
+        return null; // Return null if no previous window found
     }
 }
 
@@ -81,16 +98,6 @@ class TitleWindow extends JFrame {
 
         add(mainPanel);
         
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                // Delete log.txt
-                File log = new File("log.txt");
-                if (log.exists()) {
-                    log.delete();
-                }
-            }
-        });
     }
     
 
@@ -171,7 +178,6 @@ class TabbedOrderWindow extends JFrame {
                         icedTeaQuantity, pineappleJuiceQuantity, mangoJuiceQuantity,
                         waterQuantity, haloHaloQuantity, lecheFlanQuantity, cheesecakeQuantity);
              
-                dispose();
                 orderSummaryWindow.setVisible(true);
             }
         });
@@ -363,7 +369,7 @@ class TabbedOrderWindow extends JFrame {
 
 class OrderSummaryWindow extends JFrame {
 	private static int orderCount = 0; 
-	 private int orderNumber;
+	private int orderNumber;
     private double totalPrice;
 
     public OrderSummaryWindow(
@@ -424,10 +430,14 @@ class OrderSummaryWindow extends JFrame {
                                 icedTeaQuantity, pineappleJuiceQuantity, mangoJuiceQuantity,
                                 waterQuantity, haloHaloQuantity, lecheFlanQuantity, cheesecakeQuantity, totalPrice, cash, change);
                         
+
+                        
                         SwingUtilities.invokeLater(new Runnable() {
                             public void run() {
                                 TitleWindow titleWindow = new TitleWindow();
                                 titleWindow.setVisible(true);
+                                
+                                closePreviousWindow();
                             }
                         });
                         dispose();
@@ -444,9 +454,8 @@ class OrderSummaryWindow extends JFrame {
         backButton.setBackground(Color.ORANGE);
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	orderCount -= 1;
                 dispose(); // Close the current window
-                TabbedOrderWindow orderWindow = new TabbedOrderWindow();
-                orderWindow.setVisible(true);
             }
         });
 
@@ -468,17 +477,7 @@ class OrderSummaryWindow extends JFrame {
         panel.add(buttonPanel, BorderLayout.SOUTH);
 
         add(panel);
-        
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                // Delete log.txt
-                File log = new File("log.txt");
-                if (log.exists()) {
-                    log.delete();
-                }
-            }
-        });
+       
     }
 
     private String generateSummaryHTML(
@@ -533,6 +532,23 @@ class OrderSummaryWindow extends JFrame {
         sb.append("</ul>");
         return sb.toString();
     }
+    
+    private void closePreviousWindow() {
+        TabbedOrderWindow prevWindow = getPreviousWindow();
+        if (prevWindow != null) {
+            prevWindow.dispose();
+        }
+    }
+
+    private TabbedOrderWindow getPreviousWindow() {
+        // Find the previously opened TabbedOrderWindow
+        for (Window window : Window.getWindows()) {
+            if (window instanceof TabbedOrderWindow) {
+                return (TabbedOrderWindow) window;
+            }
+        }
+        return null; // Return null if no previous window found
+    }
 
     private double calculateTotalPrice(
             int porkSisigQuantity, int chickenBBQQuantity, int porkBBQQuantity,
@@ -568,7 +584,7 @@ class OrderSummaryWindow extends JFrame {
 
         try (FileWriter writer = new FileWriter(filename, true)) {
             // Append order details to file
-            writer.write("Order Number: " + String.format("%02d", orderNumber) + "\n");
+            writer.write("\nOrder Number: " + String.format("%02d", orderNumber) + "\n");
             writer.write("Items Ordered:\n");
 
             if (porkSisigQuantity > 0) {
@@ -633,4 +649,3 @@ class OrderSummaryWindow extends JFrame {
     }
     
 }
-
